@@ -1,118 +1,136 @@
 {% if request.session.is_login %}
     <div id="con">
-        <p style=" font-size :30px" class="contentName" id="1c">{{ contents.0.user.username }} <span
-                class="badge" id="1s">{{ contents.0.user.content_num }}</span></p>
-        <div class="well well-lg" id="1w">{{ contents.0.text }}</div>
+        <p style=" font-size :30px" class="contentName" id="con0">{{ contents.0.user.username }} <span
+                class="badge">{{ contents.0.user.content_num }}</span><span
+                style=" font-size :15px">{{ contents.0.time }}</span></p>
+        <div class="well well-lg"><p id="well0">{{ contents.0.text }}</p></div>
 
-        <p style=" font-size :30px" class="contentName">{{ contents.1.user.username }} <span
-                class="badge">{{ contents.1.user.content_num }}</span></p>
-        <div class="well well-lg">{{ contents.1.text }}</div>
+        <p style=" font-size :30px" class="contentName" id="con1">{{ contents.1.user.username }} <span
+                class="badge">{{ contents.1.user.content_num }}</span><span
+                style=" font-size :15px">{{ contents.1.time }}</span></p>
+        <div class="well well-lg"><p id="well1">{{ contents.1.text }}</p></div>
 
-        <p style=" font-size :30px" class="contentName">{{ contents.2.user.username }} <span
-                class="badge">{{ contents.2.user.content_num }}</span></p>
-        <div class="well well-lg">{{ contents.2.text }}</div>
+        <p style=" font-size :30px" class="contentName" id="con2">{{ contents.2.user.username }} <span
+                class="badge">{{ contents.2.user.content_num }}</span><span
+                style=" font-size :15px">{{ contents.2.time }}</span></p>
+        <div class="well well-lg"><p id="well2">{{ contents.2.text }}</p></div>
 
-        <p style=" font-size :30px" class="contentName">{{ contents.3.user.username }} <span
-                class="badge">{{ contents.3.user.content_num }}</span></p>
-        <div class="well well-lg">{{ contents.3.text }}</div>
+        <p style=" font-size :30px" class="contentName" id="con3">{{ contents.3.user.username }} <span
+                class="badge">{{ contents.3.user.content_num }}</span><span
+                style=" font-size :15px">{{ contents.3.time }}</span></p>
+        <div class="well well-lg"><p id="well3">{{ contents.3.text }}</p></div>
 
-        <p style=" font-size :30px" class="contentName">{{ contents.4.user.username }} <span
-                class="badge">{{ contents.4.user.content_num }}</span></p>
-        <div class="well well-lg">{{ contents.4.text }}</div>
+        <p style=" font-size :30px" class="contentName" id="con4">{{ contents.4.user.username }} <span
+                class="badge">{{ contents.4.user.content_num }}</span><span
+                style=" font-size :15px">{{ contents.4.time }}</span></p>
+        <div class="well well-lg"><p id="well4">{{ contents.4.text }}</p></div>
 
-        <p style=" font-size :30px" class="contentName">{{ contents.5.user.username }} <span
-                class="badge">{{ contents.5.user.content_num }}</span></p>
-        <div class="well well-lg">{{ contents.5.text }}</div>
+        <p style=" font-size :30px" class="contentName" id="con5">{{ contents.5.user.username }} <span
+                class="badge">{{ contents.5.user.content_num }}</span><span
+                style=" font-size :15px">{{ contents.5.time }}</span></p>
+        <div class="well well-lg"><p id="well5">{{ contents.5.text }}</p></div>
     </div>
 {% else %}
 
+    <div id="con">
+        <p style=" font-size :30px">留言实例<span class="badge">1</span></p>
+        <div class="well well-lg">您可以再此处填写想要留言的内容</div>
 
-    <p style=" font-size :30px">留言实例<span class="badge">1</span></p>
-    <div class="well well-lg">您可以再此处填写想要留言的内容</div>
+
+        <p style=" font-size :30px">鲁迅<span class="badge">1</span></p>
+        <div class="well well-lg">革命是痛苦，其中也必然混有污秽和血，决不是如诗人所想象的那般有趣，那般完美；革命尤其是现实的故事，
+            需要各种卑贱的，麻烦的工作，决不如诗人想象的那般浪漫；革命当然有破坏，然而更需要建设，破坏是痛快的，
+            但建设却是麻烦的事。所以对于革命抱着浪漫谛克的幻想的人，一和革命接近，一到革命进行，便容易失望。
+        </div>
 
 
-
-    <p style=" font-size :30px">鲁迅<span class="badge">1</span></p>
-    <div class="well well-lg">革命是痛苦，其中也必然混有污秽和血，决不是如诗人所想象的那般有趣，那般完美；革命尤其是现实的故事，
-        需要各种卑贱的，麻烦的工作，决不如诗人想象的那般浪漫；革命当然有破坏，然而更需要建设，破坏是痛快的，
-        但建设却是麻烦的事。所以对于革命抱着浪漫谛克的幻想的人，一和革命接近，一到革命进行，便容易失望。
+        <p style=" font-size :30px">小明<span class="badge">1</span></p>
+        <div class="well well-lg">又可以加班到十点啦，真开心！</div>
     </div>
-
-
-
-    <p style=" font-size :30px">小明<span class="badge">1</span></p>
-    <div class="well well-lg">又可以加班到十点啦，真开心！</div>
-
-
 {% endif %}
-<nav aria-label="...">
+<nav aria-label="..." id="pager">
     {#    <ul class="pager">#}
-    {#        <form action="{% url 'msgboard:getMsg' %}?page={{prePage}}" method="get">#}
-    {#            <button  type="submit" id="previousPage" >previous</button>#}
-    {#        </form>#}
-    {#        <p id="totalpage" hidden="hidden" >{{ total_page }}</p>#}
-    {#        <form action="{% url 'msgboard:getMsg' %}?page={{nextPage}}"  method="get">#}
-    {#            <button type="submit" id="nextPage" >next</button>#}
-    {#        </form>#}
+    {#        {% if pageContent.has_previous %}#}
+    {#            <li><a href="?page={{ pageContent.previous_page_number }}">Previous</a></li>#}
     {##}
+    {#        {% endif %}#}
     {##}
+    {#        {% if pageContent.has_next %}#}
+    {#            <li><a href="?page={{ pageContent.next_page_number }}">Next</a></li>#}
+    {##}
+    {#        {% endif %}#}
     {#    </ul>#}
     <ul class="pager">
-        {% if pageContent.has_previous %}
-        <li><a href="?page={{ pageContent.previous_page_number }}">Previous</a></li>
+        <li>
+            <button type="button" id="previousPage" {% if not has_pre_page %}
+                    hidden="hidden"
+            {% endif %}>Previous
+            </button>
+        </li>
+        <li>
+            <button type="button" id="nextPage">Next</button>
+        </li>
 
-        {% endif %}
 
-        {% if pageContent.has_next %}
-        <li><a href="?page={{ pageContent.next_page_number }}">Next</a></li>
-
-        {% endif %}
     </ul>
 </nav>
-{#<script>#}
-{#    $(function(){#}
-{#        let page = 1#}
-{#        let totalpage=$('#totalpage').text()#}
-{#        console.log(totalpage)#}
-{#        $("#previousPage").click(function () {#}
-{#            console.log('happen')#}
-{#            page = page - 1#}
-{#            if (page > 0) {#}
-{#                render(page)#}
-{#            } else#}
-{#                page = page + 1#}
-{#        });#}
-{#        $("#nextPage").click(function () {#}
-{#            console.log('happen')#}
-{#            page = page + 1#}
-{#            if (page <= parseInt(totalpage)) {#}
-{#                render(page)#}
-{#            } else#}
-{#                page = page - 1#}
-{#        });#}
-{#    });#}
-{##}
-{#    function render(page) {#}
-{#        $.ajax({#}
-{#            type: "get",#}
-{#            url: "{% url 'msgboard:getMsg' %}",#}
-{#            data: {"page": page},#}
-{#            success:function(data) {#}
-{#                $('.contentName').remove()#}
-{#                $('.badge').remove()#}
-{#                $('.well well-lg').remove()#}
-{#                $.each(data.contents, function (i, content) {#}
-{##}
-{#                    let text = content['text']#}
-{#                    let num = content['user']['content_num']#}
-{#                    let username = content['user']['username']#}
-{#                    console.log(text,num,username)#}
-{#                    let html = '<p style=" font-size :30px" class="contentName" >' + username + ' <span\n' +#}
-{#                        '            class="badge" >' + num + ' </span></p>\n' +#}
-{#                        '<div class="well well-lg" >' + text + '</div>'#}
-{#                    $('#con').append(html)#}
-{#                })#}
-{#            }#}
-{#        })#}
-{#    }#}
-{#</script>#}
+<script>
+    $(function () {
+        let page = 1
+        let totalpage = {{ total_page }}
+            console.log(totalpage)
+        $("#previousPage").click(function () {
+            console.log('happen')
+            page = page - 1
+            if (page > 0) {
+                render(page)
+            } else
+                page = page + 1
+        });
+        $("#nextPage").click(function () {
+            console.log('happen')
+            page = page + 1
+            if (page <= parseInt(totalpage)) {
+                render(page)
+            } else
+                page = page - 1
+        });
+    });
+
+    function render(page) {
+        let ur = "/msgboard/getMsg?page=" + page
+        $.ajax({
+            type: 'get',
+            url: ur,
+            success: function (data) {
+                if (data.has_pre_page) {
+                    $('#previousPage').show()
+                } else
+                    $('#previousPage').hide()
+                if (data.has_next_page) {
+                    $('#nextPage').show()
+                } else
+                    $('#nextPage').hide()
+                console.log(data.contents_li[0])
+                $.each(data.contents_li, function (i, content) {
+                    let con = 'con' + i
+                    let span = 'span' + i
+                    let well = 'well' + i
+                    let num = content['user']['content_num']
+                    let username = content['user']['username']
+                    {#let time = '' + String(content['time']['year']) + '年' + String(content['time']['month']) + '月' +#}
+                    {#   String(content['time']['day']) + '日' + ' ' + String(content['time']['hour']) + ':' + String(content['time']['minute'])#}
+
+                    {# + '<span style=" font-size :15px">' + time + '</span>' #}
+                    {#console.log(time)#}
+                    let span_content = username + '<span\n' +
+                        'class=\"badge\">' + num + '</span>'+ '<span style=" font-size :15px">' + content['time'] + '</span>'
+                    document.getElementById(con).innerHTML = span_content
+
+                    document.getElementById(well).innerText = content['text']
+                })
+            }
+
+        })
+    }
+</script>

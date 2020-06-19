@@ -1,5 +1,11 @@
+# -*- coding:utf-8
 from django.db import models
 from mongoengine import *
+import sys
+
+
+reload(sys)
+sys.setdefaultencoding("utf-8")
 
 
 # Create your models here.
@@ -10,8 +16,8 @@ class MyUser(Document):
     password = StringField(max_length=256, required=True)
     content_num = IntField(default=0)
 
-    # def __str__(self):
-    #     return '{username:{},content_num:{}}'.format(str(self.username), str(self.content_num))
+    def to_json(self):
+        return {'username': str(self.username), 'content_num': str(self.content_num)}
 
 
 class Content(Document):
@@ -19,5 +25,6 @@ class Content(Document):
     time = DateTimeField(required=True)
     user = ReferenceField(MyUser)
 
-    # def __str__(self):
-    #     return '{text:{},user:{}}'.format(str(self.text), str(self.user))
+    def to_json(self):
+        return {'text': str(self.text), 'user': self.user.to_json(),
+                'time': self.time.strftime('%Y年%m月%d日 %H:%M')}

@@ -7,5 +7,5 @@ urlpatterns = [
     url(r'^register/$', views.msg_user_register, name='register'),
     url(r'^pushMsg/$', views.msg_push, name='pushMsg'),
     url(r'^getMsg/$', views.msg_get, name='getMsg'),
-    url(r'^test/$', views.test, name='test'),
+
 ]
